@@ -48,6 +48,8 @@ Accessible Math Expressions is a web-based tool designed to make mathematical ex
 - **Interactive Word Selection**: Click individual words to hear them spoken
 - **Progressive Highlighting**: Visual tracking of spoken words
 - **Playback Controls**: Start, stop, and navigate through audio playback
+  
+<img width="397" alt="Screenshot 2024-12-11 at 9 31 23 PM" src="https://github.com/user-attachments/assets/4824c033-5493-4783-9bc3-c9a341938dd1" />
 
 ## Use Cases
 
