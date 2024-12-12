@@ -1,0 +1,394 @@
+
+@font-face {
+    font-family: OpenDyslexic;
+    src: url('OpenDyslexic-Regular.otf') format('opentype');
+}
+
+
+/* Variables */
+:root {
+    /* Light theme variables */
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #eeeeee;
+    --input-border: #dddddd;
+    --button-bg: #f0f0f0;
+    --button-hover: #e0e0e0;
+    --accent-color: #4CAF50;
+    --accent-hover: #45a049;
+    --speech-button: #007bff;
+    --speech-hover: #0056b3;
+    --font-family: Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+    /* Dark theme variables */
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #3d3d3d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: #404040;
+    --input-border: #505050;
+    --button-bg: #404040;
+    --button-hover: #505050;
+    --accent-color: #66bb6a;
+    --accent-hover: #4caf50;
+    --speech-button: #2196f3;
+    --speech-hover: #1976d2;
+}
+
+/* Base styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    transition: all 0.2s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left h1 {
+    font-size: 1.8em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.header-right {
+    text-align: right;
+    position: relative;
+}
+
+.credits {
+    color: var(--text-secondary);
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Control Buttons */
+.control-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    
+}
+
+#theme-toggle, #font-toggle {
+    padding: 8px 12px;
+    background: var(--button-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background-color 0.2s;
+}
+
+#theme-toggle:hover, #font-toggle:hover {
+    background: var(--button-hover);
+}
+
+/* Font Menu */
+.font-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 250px;
+    font-family: inherit;
+    
+}
+
+.font-menu button {
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-primary);
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-family: inherit;
+    font-size: 1.6em;
+}
+
+.font-menu button:hover {
+    background: var(--button-hover);
+    
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Left Column */
+.column.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+#latex-input {
+    width: 96%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 1.8em;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    resize: vertical;
+    min-height: 100px;
+    /*font-family: monospace;*/
+    font-family: inherit;
+}
+
+#generate-btn {
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    font-family: inherit;
+}
+
+#generate-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Shortcuts Container */
+.shortcuts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.shortcut-section {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.shortcut-section-title {
+    font-size: 1.2em;
+    margin: 0 0 8px 0;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.shortcut-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.shortcut-btn {
+    padding: 8px 12px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.25em;
+    color: var(--text-primary);
+    transition: all 0.2s;
+}
+
+.shortcut-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.shortcut-btn:focus {
+    outline: 2px solid var(--speech-button);
+    outline-offset: 2px;
+}
+
+/* Right Column */
+.output-section {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+.output-section:last-child {
+    margin-bottom: 0;
+}
+
+.output-section h2 {
+    font-size: 1.5em;
+    color: var(--text-primary);
+    margin: 0 0 15px 0;
+    font-family: inherit;
+}
+
+#rendered-math, #alt-text {
+    background-color: var(--bg-secondary);
+    padding: 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    min-height: 225px;
+    font-size: 1.8em;
+    color: var(--text-primary);
+}
+
+/* Speak Button */
+#speak-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--speech-button);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: inherit;
+}
+
+#speak-btn:hover {
+    background-color: var(--speech-hover);
+}
+
+.highlight {
+    background-color: var(--speech-button);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+/* KaTeX Dark Mode */
+[data-theme="dark"] .katex {
+    color: var(--text-primary);
+}
+
+/* Font classes */
+.font-arial {
+    font-family: Arial, sans-serif;
+}
+
+.font-opendyslexic {
+    font-family: OpenDyslexic, Arial, sans-serif;
+}
+
+.font-comic-sans {
+    font-family: "Comic Sans MS", cursive;
+}
+
+.font-verdana {
+    font-family: Verdana, sans-serif;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+
+
+
+.control-btn {
+    padding: 8px 12px;
+    background: var(--button-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background: var(--button-hover);
+}
+
+.word-blur {
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
+.word-blur:hover {
+    filter: blur(0);
+}
+
+.clickable-word {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 2px;
+}
+
+.clickable-word:hover {
+    background-color: var(--button-hover);
+    border-radius: 2px;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-right {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

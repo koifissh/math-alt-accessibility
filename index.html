@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Math Expressions</title>
+    
+    <!-- KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Accessible Math Expressions</h1>
+                <p class="credits">Created by: Daniel, Josh, Zeke</p>
+            </div>
+            <div class="header-right">
+                <div class="control-buttons">
+                    <button id="blur-toggle" class="control-btn" aria-label="Toggle word blur">
+                        👁️ Blur Words
+                    </button>
+                    <button id="color-toggle" class="control-btn" aria-label="Toggle color highlighting">
+                        🎨 Colors
+                    </button>
+                    <button id="font-toggle" aria-label="Change font style">Aa</button>
+                    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                   
+                </div>
+                <div id="font-menu" class="font-menu hidden">
+                    <button data-font="Arial">Arial</button>
+                    <button data-font="OpenDyslexic">OpenDyslexic</button>
+                    <button data-font="Comic Sans MS">Comic Sans MS</button>
+                    <button data-font="Verdana">Verdana</button>
+                </div>
+                
+            </div>
+        </header>
+
+        <main>
+            <div class="column left">
+                <div class="input-section">
+                    <div class="shortcuts-container">
+                        <!-- Shortcut buttons will be dynamically added here -->
+                    </div>
+                    <textarea id="latex-input" placeholder="Enter LaTeX expression" aria-label="LaTeX input"></textarea>
+                    <button id="generate-btn">Render Expression</button>
+                </div>
+            </div>
+
+            <div class="column right">
+                <div class="output-section">
+                    <h2>Rendered Expression:</h2>
+                    <div id="rendered-math" aria-live="polite"></div>
+                </div>
+
+                <div class="output-section">
+                    <h2>Alt Text:</h2>
+                    <div id="alt-text" aria-live="polite"></div>
+                    <button id="speak-btn" aria-label="Speak alt text">🔊 Speak</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript modules -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
