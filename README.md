@@ -1,111 +1,81 @@
+
+<img width="842" alt="Screenshot 2024-12-11 at 9 22 37 PM" src="https://github.com/user-attachments/assets/8db7e4bf-4021-4c92-8fc2-00d3121fd883" />
+
 # Accessible Math Expressions
-*Created by: Daniel, Josh, Zeke*
+Created by Daniel, Josh, Zeke
 
-## Features
-* LaTeX Math Input
-  * Automatic Math Component Buttons
-* Properly Formatted Visual Math Output
-* Custom Alternative Text Output
-  * Math Syntax Coloring
-  * Text To Speech
-    * Automatic Highlighting
-    * Single Word Clickability
-  * Optional Word Blurring
-* Font Selection (including OpenDyslexic)
-* Dark/Light Themes
+## Project Overview
+Accessible Math Expressions is a web-based tool designed to make mathematical expressions more accessible to all users, particularly those with visual impairments or learning disabilities. The application bridges the gap between mathematical notation and accessible content by converting LaTeX mathematical expressions into both visual representations and descriptive alternative text.
 
-## Demonstration
+## Core Features
 
-### Pythagorean Theorem
-```
-a^2+b^2=c^2
-```
+### LaTeX Input System
+- **Interactive Input Interface**: A dedicated text area for entering LaTeX mathematical expressions
+- **Smart Component Shortcuts**: Quick-access buttons organized by mathematical categories:
+  - Arithmetic operations and basic symbols
+  - Trigonometric functions
+  - Calculus notation
+  - Greek letters
+- **Real-time Preview**: Immediate visual feedback of the entered expression
 
-### Pythagorean Identity
-```
-\sin^2\theta+\cos^2\theta=1
-```
+### Visual Rendering
+- **Professional Typesetting**: Uses KaTeX for high-quality mathematical notation display
+- **Responsive Layout**: Clean, two-column design showing both input and output
+- **Theme Support**: Toggle between light and dark modes for comfortable viewing
 
-### Fifth-Degree Polynomial
-```
-x^5-15x^4+85x^3-225x^2+274x-120
-```
+### Accessibility Features
 
-### Simplifying a Fraction
-```
-\dfrac{1{,}200}{1{,}440}=\dfrac{120}{144}=\dfrac{20}{24}=\dfrac{5}{6}
-```
+#### Alternative Text Generation
+- **Intelligent Parsing**: Converts LaTeX expressions into natural, readable text
+- **Context-Aware Description**: Maintains mathematical meaning while providing clear verbal descriptions
+- **Semantic Grouping**: Organizes mathematical components for better comprehension
 
-### Solving Equation using an Absolute Value
-```
-\left|x^3\right|=13\\
-x=\pm\sqrt[3]{13}
-```
+#### Visual Accessibility
+- **Color-Coded Components**: Mathematical elements are highlighted by category:
+  - Functions (Blue)
+  - Operators (Red)
+  - Comparisons (Purple)
+  - Mathematical symbols (Green)
+- **Optional Word Blurring**: Helps users focus on specific parts of expressions
+- **Font Customization**: Multiple font options including:
+  - OpenDyslexic for improved readability
+  - Arial
+  - Comic Sans MS
+  - Verdana
 
-### Trig Functions
-```
-\sin\theta\sec\theta=\tan\theta\\
-\sin\theta\csc\theta=1
-```
+#### Audio Accessibility
+- **Text-to-Speech Integration**: Natural verbalization of mathematical expressions
+- **Interactive Word Selection**: Click individual words to hear them spoken
+- **Progressive Highlighting**: Visual tracking of spoken words
+- **Playback Controls**: Start, stop, and navigate through audio playback
 
-### Inequality with Logarithm
-```
-x\leq\log_264
-```
+## Use Cases
 
-### Ellipse
-```
-\dfrac{x^2}{9}+\dfrac{y^2}{16}=1
-```
+### Educational Support
+- Assists students with different learning styles
+- Provides multiple ways to understand mathematical concepts
+- Supports both visual and auditory learning
 
-### Definition of Inverse Function
-```
-f\left(f^{-1}\left(x\right)\right)=x
-```
+### Accessibility Compliance
+- Helps educational institutions meet accessibility requirements
+- Makes mathematical content available to screen reader users
+- Provides alternative formats for mathematical documentation
 
-### Definition of a Factorial
-```
-n!=n\times\left(n-1\right)\times\left(n-2\right)\times\dots\times1
-```
+### Learning Aid
+- Helps users understand LaTeX syntax
+- Provides immediate feedback on mathematical notation
+- Supports self-paced learning of mathematical concepts
 
-### Definition of a Combination
-```
-{}_nC_r=\frac{n!}{r!\left(n-r\right)!}
-```
+## Technical Implementation
+- Built with modern web technologies (HTML5, CSS3, JavaScript)
+- Modular architecture for easy maintenance and updates
+- Responsive design for various screen sizes
+- Local storage for user preferences
+- No server-side dependencies
 
-### Definition of a Permutation
-```
-{}_nP_r=\frac{n!}{\left(n-r\right)!}
-```
-
-### Position Equation
-```
-s\left(t\right)=\int_0^tv\left(t\right)
-```
-
-### Euler’s Formula
-```
-e^{i\theta}=\cos\theta+i\sin\theta
-```
-
-### Derivative of the Square Root of X
-```
-\frac{d}{dx}\sqrt{x}=\frac{1}{2}x^{-\frac{1}{2}}=\frac{1}{2\sqrt{x}}
-```
-
-### Limits
-```
-\lim_{x\to0^-}\dfrac{1}{x}=-\infty\\{}\\
-\lim_{x\to0^+}\dfrac{1}{x}=+\infty\\{}\\
-\lim_{x\to 0}\dfrac{1}{x}\quad\text{does not exist.}
-```
-
-### Indefinite Integral
-```
-\int x^2\,dx=\frac{x^3}{3}+C
-```
-
-### Definite Integral
-```
-\int_0^1x^2\,dx=\frac{1}{3}
-```
+## Best Practices
+- Follows WCAG accessibility guidelines
+- Implements ARIA labels for screen reader compatibility
+- Provides keyboard navigation support
+- Maintains high contrast ratios for readability
+- Includes clear visual feedback for all interactions
